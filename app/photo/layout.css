@@ -1,0 +1,23 @@
+:root{
+    /* 1280px */
+
+    /* drop */
+    --photo-page_drop-width: 586px;
+    --photo-page_drop-height: 111px;
+    --photo-page_drop-top: -24px;
+
+    /* topBar */
+    --photo-page_topBar-width: calc(1156 * var(--k));
+    --photo-page_topBar-height: calc(30 * var(--k));
+    --photo-page_topBar-top: 2vh;
+    --photo-page_topBarTitle-size: calc(30 * var(--k));
+
+    /* topBarBack */
+    --photo-page_topBarBack-padding:
+        calc(8 * var(--k))
+        calc(20 * var(--k))
+        calc(8  * var(--k))
+        calc(20 * var(--k));
+    --photo-page_topBarBack-border-px: calc(1 * var(--k));
+    --photo-page_topBarBackText-size: calc(14 * var(--k));
+}
