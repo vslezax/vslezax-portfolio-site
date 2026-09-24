@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { codeNext, onest } from "./fonts";
 import "./globals.css";
-
-const codeNext = localFont({
-  src: "./../public/fonts/CodeNext-Regular.woff2",
-  display: "swap",
-  variable: "--font-codenext",
-});
 
 export const metadata: Metadata = {
   title: "vslezax // Ярослав Журков",

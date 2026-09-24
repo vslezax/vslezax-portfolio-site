@@ -1,23 +1,21 @@
-:root{
-    /* 1280px */
+:root {
+    /* 1280px — базовые значения, больше не нужны для .content */
+    --photo-page_contentDropShadowFilter: drop-shadow(0 0 3px rgba(0, 0, 0, .2));
+    --photo-page_buttonCircle-gradient: linear-gradient(45deg, #E5E5E5, #FFFFFF);
+    --photo-page_contentButtonsDropShadow: drop-shadow(0 0 9px rgba(0, 0, 0, 0.2));
 
-    /* drop */
-    --photo-page_drop-width: 586px;
-    --photo-page_drop-height: 111px;
-    --photo-page_drop-top: -24px;
-
-    /* topBar */
-    --photo-page_topBar-width: calc(1156 * var(--k));
-    --photo-page_topBar-height: calc(30 * var(--k));
-    --photo-page_topBar-top: 2vh;
-    --photo-page_topBarTitle-size: calc(30 * var(--k));
-
-    /* topBarBack */
-    --photo-page_topBarBack-padding:
-        calc(8 * var(--k))
-        calc(20 * var(--k))
-        calc(8  * var(--k))
-        calc(20 * var(--k));
-    --photo-page_topBarBack-border-px: calc(1 * var(--k));
-    --photo-page_topBarBackText-size: calc(14 * var(--k));
+    /* Top bars — оставляем на --k, они привязаны к макету */
+    --photo-page_topBarK: calc(var(--k));
+    --photo-page_topLeftBarLeft: calc(20 * var(--photo-page_topBarK));
+    --photo-page_topLeftBarTop: calc(20 * var(--photo-page_topBarK));
+    --photo-page_topLeftBarTitleSize: calc(14.29 * var(--photo-page_topBarK));
+    --photo-page_topLeftBarDescription: calc(9.88 * var(--photo-page_topBarK));
+    --photo-page_topLeftBarRegisteredSize: calc(14.29 * var(--photo-page_topBarK));
+    --photo-page_topRightBarTextSize: calc(8.18 * var(--photo-page_topBarK));
+    --photo-page_topRightBarArrowSize: calc(10 * var(--photo-page_topBarK));
+    --photo-page_topRightBarPadding:
+            calc(5.84 * var(--photo-page_topBarK))
+            calc(11.69 * var(--photo-page_topBarK))
+            calc(5.84 * var(--photo-page_topBarK))
+            calc(11.69 * var(--photo-page_topBarK));
 }
