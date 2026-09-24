@@ -64,6 +64,7 @@ export function CaseImage({
             sizes="100vw"
             style={{ objectFit: "cover" }}
             priority
+            unoptimized
         />
     );
 }
