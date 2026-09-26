@@ -29,9 +29,11 @@
     filter: var(--photo-page_contentDropShadowFilter);
 }
 .contentBody {
-    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    cursor: pointer;
 }
 .contentBack1 {
     transform: translate(calc(-50% + .75%), calc(-50% + .75%));

@@ -1,16 +1,9 @@
 "use client";
 
 import { useCallback, useMemo, useState, useEffect, useRef } from "react";
-import Image, { StaticImageData } from "next/image";
+import { CASES, CASES_COUNT } from "./cases";
 
-// images import
-import img1 from "./cases/1.webp";
-import img2 from "./cases/2.webp";
-import img3 from "./cases/3.webp";
-import img4 from "./cases/4.webp";
-import img5 from "./cases/5.webp";
-const CASES: StaticImageData[] = [img1, img2, img3, img4, img5];
-export const CASES_COUNT = CASES.length;
+export { CASES, CASES_COUNT };
 
 /**
  * Хук для управления текущим кейсом.
@@ -39,47 +32,17 @@ export function useCases(initial: number = 1) {
 export function useCasesViewer(initial: number = 1) {
     const { n, next, prev, goTo, total } = useCases(initial);
 
-    const image = useMemo(() => CASES[n - 1], [n]);
-    const href = useMemo(() => `/photo/${n}`, [n]);
+    const Case = useMemo(() => CASES[n - 1], [n]);
 
-    return { n, image, href, next, prev, goTo, total };
+    return { n, Case, next, prev, goTo, total };
 }
-
-/** Компонент-картинка кейса. */
-export function CaseImage({
-                              src,
-                              alt,
-                              className,
-                          }: {
-    src: StaticImageData;
-    alt?: string;
-    className?: string;
-}) {
-    return (
-        <Image
-            src={src}
-            alt={alt ?? "case"}
-            className={className}
-            fill
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-            priority
-            unoptimized
-        />
-    );
-}
-
-export { CASES };
 
 /** Длительность одной фазы в мс. */
 export const FLIP_DURATION = 300;
 
 /**
  * Хук анимации «перелистывания страницы» для contentBody.
- * Возвращает ref на элемент и функцию flip(direction).
- *  - direction: 1 — вперёд (next), -1 — назад (prev)
- * Во время смены картинки (когда элемент отвернут на 90°)
- * вызывается onMidpoint — тут меняется N.
+ * (без изменений — оставляем как есть)
  */
 export function usePageFlip(
     ref: React.RefObject<HTMLElement | null>,
@@ -95,7 +58,6 @@ export function usePageFlip(
 
             const scene = el.parentElement;
 
-            // включаем 3D-контекст только на время анимации
             scene?.classList.add("flipping");
             el.classList.add("flipping");
 
@@ -116,7 +78,6 @@ export function usePageFlip(
                 el.style.transform = "rotateY(0deg)";
 
                 window.setTimeout(() => {
-                    // снимаем всё: возвращаем элемент в обычный слой
                     el.style.transition = "";
                     el.style.transform = "";
                     el.classList.remove("flipping");

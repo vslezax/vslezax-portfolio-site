@@ -1,21 +1,19 @@
 "use client";
 
-import Link from "next/link";
 import { useRef } from "react";
 import styles from "./page.module.css";
 import ArrowIcon from "./arrow.svg";
 import "./layout.css";
 
-import { useCasesViewer, CaseImage, usePageFlip } from "./casesViewer";
+import { useCasesViewer, usePageFlip } from "./casesViewer";
 import ProgressBar from "./progressBar";
-import CaseScene from "@/app/photo/cases/case1/case1";
-import {useElementSize} from "@/app/photo/useElementSize";
+import { useElementSize } from "@/app/photo/useElementSize";
 
 export default function PhotoPage() {
-    const bodyRef = useRef<HTMLAnchorElement>(null);
+    const bodyRef = useRef<HTMLDivElement>(null);
     const sceneRef = useRef<HTMLDivElement>(null);
 
-    const { n, image, href, goTo, total } = useCasesViewer(1);
+    const { n, Case, goTo, total } = useCasesViewer(1);
 
     const flip = usePageFlip(bodyRef);
 
@@ -31,30 +29,24 @@ export default function PhotoPage() {
 
     return (
         <main className={styles.main}>
-            {/* Content */}
             <div className={styles.content}>
-                <div className={styles.contentBack2}></div>
-                <div className={styles.contentBack1}></div>
+                <div className={styles.contentBack2} />
+                <div className={styles.contentBack1} />
 
-                {/* Сцена с perspective — внутри крутится contentBody */}
                 <div className={styles.contentBodyScene} ref={sceneRef}>
-                    <Link
-                        href={href}
-                        ref={bodyRef}
-                        className={styles.contentBody}
-                    >
-                        <CaseScene n={n} width={width} height={height} />
-                    </Link>
+                    {/* было <Link>, стало <div> — ссылки больше нет */}
+                    <div ref={bodyRef} className={styles.contentBody}>
+                        <Case width={width} height={height} />
+                    </div>
                 </div>
 
-                {/* Кнопки */}
                 <button
                     type="button"
                     className={styles.leftButton}
                     onClick={handlePrev}
                     aria-label="Предыдущий кейс"
                 >
-                    <div className={styles.buttonCircle}></div>
+                    <div className={styles.buttonCircle} />
                     <ArrowIcon className={styles.leftButtonArrow} />
                 </button>
 
@@ -64,12 +56,11 @@ export default function PhotoPage() {
                     onClick={handleNext}
                     aria-label="Следующий кейс"
                 >
-                    <div className={styles.buttonCircle}></div>
+                    <div className={styles.buttonCircle} />
                     <ArrowIcon className={styles.rightButtonArrow} />
                 </button>
             </div>
 
-            {/* Top Left Bar */}
             <div className={styles.topLeftBar}>
                 <div className={styles.topLeftBarTitle}>
                     <div className={styles.topLeftBarTitleName}>VSLEZAX</div>
@@ -81,7 +72,6 @@ export default function PhotoPage() {
                 </div>
             </div>
 
-            {/* Top Right Bar */}
             <div className={styles.topRightBar}>
                 <div className={styles.topRightBarInside}>
                     <div className={styles.topRightBarText}>вернуться на главную</div>
@@ -89,7 +79,6 @@ export default function PhotoPage() {
                 </div>
             </div>
 
-            {/* Progress bar */}
             <ProgressBar value={n} total={total} />
         </main>
     );

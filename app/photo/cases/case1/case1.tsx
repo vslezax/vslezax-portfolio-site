@@ -1,16 +1,14 @@
 "use client";
 import styles from "./case1.module.css";
 import React from "react";
-import Lines from "./lines.svg";
-import MicroGraphic from "./microGraphic.svg";
-import Logo from "./logo.png"
 import Image from "next/image";
+
+import image from "./image.webp";
 
 const DESIGN_W = 968;
 const DESIGN_H = 541;
 
-export default function CaseScene({n, width, height,}: {
-    n: number;
+export default function CaseScene({width, height,}: {
     width: number;
     height: number;
 }) {
@@ -18,33 +16,17 @@ export default function CaseScene({n, width, height,}: {
     const k = Math.min(width / DESIGN_W, height / DESIGN_H);
 
     return (
-        <main className={styles.main}
-              style={{ "--case_k": k } as React.CSSProperties}
-        >
-            <div className={styles.image}>
-                <Lines className={styles.lines} />
-                <div className={styles.imageTitle}>ФОТО-<br/>ПОРТФОЛИО</div>
-                <div className={styles.imageSubtitle}>Сборник работ за 2023-2026 год</div>
-                <div className={styles.imageDescription}>Хоть я и позиционирую себя, в основном, как специалиста<br/>
-                    в области видео и моушна, когда меня наскучивает основной<br/>
-                    профиль я люблю фотографировать людей, мероприятия<br/>
-                    и другие красивые вещи в мире</div>
-
-                <div className={styles.imageTopLinkContainer}>
-                    <div className={styles.imageTopLink}>vslezax.vercel.app</div>
-                    <div className={styles.imageTopLinkOnest}>/</div>
-                    <div className={styles.imageTopLink}>photo</div>
+        <main className={styles.mainContainer}>
+            <div className={styles.allShadow} style={{ "--case_k": k } as React.CSSProperties}/>
+            <div className={styles.centralShadow} style={{ "--case_k": k } as React.CSSProperties}/>
+            <main className={styles.main} style={{ "--case_k": k } as React.CSSProperties}>
+                <div className={styles.image}>
+                    <Image src={image} alt={''}></Image>
                 </div>
-                <div className={styles.imageTop2026Container}>
-                    <div className={styles.imageTop2026Onest}>©</div>
-                    <div className={styles.imageTop2026}>2026</div>
-                </div>
+                <div className={styles.content}>
 
-                <MicroGraphic className={styles.imageMicrographic} />
-                <Image src={Logo} alt={''} className={styles.imageLogo}/>
-            </div>
-            <div className={styles.content}>
-            </div>
+                </div>
+            </main>
         </main>
     );
 }
