@@ -93,7 +93,13 @@ export function usePageFlip(
             if (!el || isAnimating.current) return;
             isAnimating.current = true;
 
-            const phase1 = direction === 1 ? -3 : 3;
+            const scene = el.parentElement;
+
+            // включаем 3D-контекст только на время анимации
+            scene?.classList.add("flipping");
+            el.classList.add("flipping");
+
+            const phase1 = direction === 1 ? -25 : 25;
             const phase3 = -phase1;
 
             el.style.transition = `transform ${duration}ms cubic-bezier(.66,0,.89,.47)`;
@@ -106,12 +112,17 @@ export function usePageFlip(
                 el.style.transform = `rotateY(${phase3}deg)`;
                 void el.offsetWidth;
 
-                el.style.transition = `transform ${duration*2}ms cubic-bezier(.14,.71,.28,.93)`;
+                el.style.transition = `transform ${duration * 2}ms cubic-bezier(.14,.71,.28,.93)`;
                 el.style.transform = "rotateY(0deg)";
 
                 window.setTimeout(() => {
+                    // снимаем всё: возвращаем элемент в обычный слой
+                    el.style.transition = "";
+                    el.style.transform = "";
+                    el.classList.remove("flipping");
+                    scene?.classList.remove("flipping");
                     isAnimating.current = false;
-                }, duration);
+                }, duration * 2);
             }, duration);
         },
         [ref, duration],
@@ -119,11 +130,14 @@ export function usePageFlip(
 
     useEffect(() => {
         const el = ref.current;
+        const scene = el?.parentElement;
         return () => {
             if (el) {
                 el.style.transition = "";
                 el.style.transform = "";
+                el.classList.remove("flipping");
             }
+            scene?.classList.remove("flipping");
         };
     }, [ref]);
 

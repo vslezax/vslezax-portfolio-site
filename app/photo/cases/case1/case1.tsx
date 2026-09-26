@@ -2,6 +2,9 @@
 import styles from "./case1.module.css";
 import React from "react";
 import Lines from "./lines.svg";
+import MicroGraphic from "./microGraphic.svg";
+import Logo from "./logo.png"
+import Image from "next/image";
 
 const DESIGN_W = 968;
 const DESIGN_H = 541;
@@ -26,6 +29,19 @@ export default function CaseScene({n, width, height,}: {
                     в области видео и моушна, когда меня наскучивает основной<br/>
                     профиль я люблю фотографировать людей, мероприятия<br/>
                     и другие красивые вещи в мире</div>
+
+                <div className={styles.imageTopLinkContainer}>
+                    <div className={styles.imageTopLink}>vslezax.vercel.app</div>
+                    <div className={styles.imageTopLinkOnest}>/</div>
+                    <div className={styles.imageTopLink}>photo</div>
+                </div>
+                <div className={styles.imageTop2026Container}>
+                    <div className={styles.imageTop2026Onest}>©</div>
+                    <div className={styles.imageTop2026}>2026</div>
+                </div>
+
+                <MicroGraphic className={styles.imageMicrographic} />
+                <Image src={Logo} alt={''} className={styles.imageLogo}/>
             </div>
             <div className={styles.content}>
             </div>

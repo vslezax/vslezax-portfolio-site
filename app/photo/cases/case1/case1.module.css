@@ -31,7 +31,7 @@
 .imageTitle{
     position: absolute;
     top: calc(267px * var(--case_k));
-    left: calc(191px * var(--case_k));
+    left: calc(189px * var(--case_k));
     line-height: 1;
     font-size: calc(36px * var(--case_k));
     font-family: var(--font-codenext);
@@ -55,15 +55,83 @@
     position: absolute;
     top: calc(339px * var(--case_k));
     left: calc(191px * var(--case_k));
-    width: calc(262px * var(--case_k));;
+    width: calc(262px * var(--case_k));
 
     font-size: calc(8px * var(--case_k));
     line-height: 1;
     font-family: var(--font-codenext);
-    font-weight: 500;
+    font-weight: 300;
 
     color: white;
     opacity: .33;
+}
+.imageTopLinkContainer{
+    position: absolute;
+    top: calc(14px * var(--case_k));
+    left: calc(191px * var(--case_k));
+
+    display: flex;
+    flex-direction: row;
+
+    color: white;
+}
+.imageTopLink{
+    font-size: calc(7px * var(--case_k));
+    line-height: 1;
+    font-family: var(--font-codenext);
+    font-weight: 300;
+
+    color: white;
+}
+.imageTopLinkOnest{
+    font-size: calc(7px * var(--case_k));
+    line-height: 1;
+    font-family: var(--font-onest);
+    font-weight: 300;
+
+    color: white;
+}
+.imageTop2026Container{
+    position: absolute;
+    top: calc(14px * var(--case_k));
+    left: calc(440px * var(--case_k));
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    color: white;
+}
+.imageTop2026{
+    font-size: calc(7px * var(--case_k));
+    line-height: 1;
+    font-family: var(--font-codenext);
+    font-weight: 300;
+
+    color: white;
+}
+.imageTop2026Onest{
+    font-size: calc(7px * var(--case_k));
+    line-height: 1;
+    font-family: var(--font-onest);
+    font-weight: 300;
+
+    color: white;
+}
+.imageMicrographic{
+    position: absolute;
+    top: calc(14px * var(--case_k));
+    left: calc(137px * var(--case_k));
+
+    width: calc(10px * var(--case_k));
+    height: calc(57px * var(--case_k));
+}
+.imageLogo{
+    position: absolute;
+    top: calc(502px * var(--case_k));
+    left: calc(21px * var(--case_k));
+
+    width: calc(41px * var(--case_k));
 }
 
 .contentTitle{

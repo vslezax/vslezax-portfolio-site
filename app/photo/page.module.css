@@ -29,7 +29,6 @@
     filter: var(--photo-page_contentDropShadowFilter);
 }
 .contentBody {
-    transform: translate(-50%, -50%);
     display: block;
     overflow: hidden;
     cursor: pointer;
@@ -206,11 +205,15 @@
     width: 88.32%;      /* 968 / 1096 */
     height: 96.09%;     /* 541 / 563 */
     transform: translate(-50%, -50%);
-
-    perspective: 1200px;
-    perspective-origin: 50% 50%;
     z-index: 2;
 }
+
+/* perspective включается только во время анимации */
+.contentBodyScene.flipping {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+}
+
 .contentBody {
     position: absolute;
     inset: 0;
@@ -219,8 +222,12 @@
     display: block;
     overflow: hidden;
     cursor: pointer;
+    /* в покое — никаких 3D-контекстов и слоёв */
+}
+
+/* 3D-контекст и GPU-слой только на время анимации */
+.contentBody.flipping {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     will-change: transform;
-    transform: rotateY(0deg);
 }
