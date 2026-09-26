@@ -4,6 +4,7 @@ export const codeNext = localFont({
     src: [
         { path: "./../public/fonts/CodeNext-Light.woff2",     weight: "300", style: "normal" },
         { path: "./../public/fonts/CodeNext-Regular.woff2",   weight: "400", style: "normal" },
+        { path: "./../public/fonts/CodeNext-Bold.woff2", weight: "700", style: "normal" },
         { path: "./../public/fonts/CodeNext-ExtraBold.woff2", weight: "800", style: "normal" },
     ],
     display: "swap",

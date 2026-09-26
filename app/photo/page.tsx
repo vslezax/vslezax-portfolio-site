@@ -8,9 +8,12 @@ import "./layout.css";
 
 import { useCasesViewer, CaseImage, usePageFlip } from "./casesViewer";
 import ProgressBar from "./progressBar";
+import CaseScene from "@/app/photo/cases/case1/case1";
+import {useElementSize} from "@/app/photo/useElementSize";
 
 export default function PhotoPage() {
     const bodyRef = useRef<HTMLAnchorElement>(null);
+    const sceneRef = useRef<HTMLDivElement>(null);
 
     const { n, image, href, goTo, total } = useCasesViewer(1);
 
@@ -24,6 +27,8 @@ export default function PhotoPage() {
         flip(-1, () => goTo(n === 1 ? total : n - 1));
     };
 
+    const { width, height } = useElementSize(sceneRef);
+
     return (
         <main className={styles.main}>
             {/* Content */}
@@ -32,17 +37,13 @@ export default function PhotoPage() {
                 <div className={styles.contentBack1}></div>
 
                 {/* Сцена с perspective — внутри крутится contentBody */}
-                <div className={styles.contentBodyScene}>
+                <div className={styles.contentBodyScene} ref={sceneRef}>
                     <Link
                         href={href}
                         ref={bodyRef}
                         className={styles.contentBody}
                     >
-                        <CaseImage
-                            src={image}
-                            alt={`case ${n}`}
-                            className={styles.caseImage}
-                        />
+                        <CaseScene n={n} width={width} height={height} />
                     </Link>
                 </div>
 
