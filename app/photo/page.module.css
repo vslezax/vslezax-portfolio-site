@@ -212,7 +212,7 @@
 
 /* perspective включается только во время анимации */
 .contentBodyScene.flipping {
-    perspective: 1200px;
+    perspective: 20000px;
     perspective-origin: 50% 50%;
 }
 

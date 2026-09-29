@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    // Конфигурация для Webpack
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
@@ -10,7 +9,6 @@ const nextConfig: NextConfig = {
         return config;
     },
 
-    // Конфигурация для Turbopack (на случай, если запустите с --turbopack)
     turbopack: {
         rules: {
             "*.svg": {

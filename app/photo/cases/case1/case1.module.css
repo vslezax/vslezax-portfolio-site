@@ -1,0 +1,132 @@
+.main {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    --case_k: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    background-color: #D8D8D8;
+    z-index: 1;
+}
+.label{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    font-family: var(--font-codenext);
+    font-weight: bold;
+    font-size: calc(220px * var(--case_k));
+    line-height: 1;
+
+    color: #000000;
+}
+.image{
+    width: calc(598px * var(--case_k));
+    height: calc(897px * var(--case_k));
+
+    position: absolute;
+    top: calc(-162px * var(--case_k));
+    left: calc(203px * var(--case_k));
+}
+.leftTextContainer{
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+    top: calc(349px * var(--case_k));
+    left: calc(24px * var(--case_k));
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(10px * var(--case_k));
+
+    opacity: .6;
+}
+.leftText{
+    width: calc(259px * var(--case_k));
+
+    font-family: var(--font-codenext);
+    font-weight: 300;
+    font-size: calc(11px * var(--case_k));
+    line-height: 1;
+    text-align: justify;
+
+    color: #000000;
+}
+.rightText{
+    position: absolute;
+    top: calc(241px * var(--case_k));
+    left: calc(626px * var(--case_k));
+
+    font-family: var(--font-codenext);
+    font-weight: 400;
+    font-size: calc(13px * var(--case_k));
+    line-height: 1;
+    text-align: right;
+
+    color: #000000;
+}
+
+.bigTextContainer{
+    position: absolute;
+    top: calc(231px * var(--case_k));
+    left: calc(24px * var(--case_k));
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(13px * var(--case_k));
+
+    opacity: .6;
+}
+.bigTextInsideContainer{
+    display: flex;
+    flex-direction: column;
+    gap: calc(2px * var(--case_k));
+}
+.bigTextInsideInsideContainer{
+    display: flex;
+    flex-direction: column;
+}
+.bigTextUncountableContainer{
+    display: flex;
+    flex-direction: row;
+    gap: calc(2px * var(--case_k));
+}
+.bigTextOnest{
+    font-family: var(--font-onest);
+    font-weight: 400;
+    font-size: calc(8px * var(--case_k));
+    line-height: 1;
+
+    color: #000000;
+}
+.bigTextUncountable{
+    font-family: var(--font-codenext);
+    font-weight: bold;
+    font-size: calc(8px * var(--case_k));
+    line-height: 1;
+    font-style: italic;
+
+    color: #000000;
+}
+.bigTextDefinition{
+    font-family: var(--font-codenext);
+    font-weight: bold;
+    font-size: calc(12px * var(--case_k));
+    line-height: 1;
+
+    color: #000000;
+}
+.bigTextExample{
+    padding-left: calc(18px * var(--case_k));
+
+    font-family: var(--font-codenext);
+    font-weight: 400;
+    font-size: calc(8px * var(--case_k));
+    line-height: 1;
+    font-style: italic;
+
+    color: #000000;
+}

@@ -1,0 +1,125 @@
+.main{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    --case_k: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    background-color: #1C1C1C;
+    z-index: 1;
+}
+.container{
+    position: relative;
+    width: 50%;
+    height: 50%;
+
+    background-color: #1C1C1C;
+}
+
+.image{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+}
+.shadow{
+    position: absolute;
+    left: 50%;
+
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(to left, rgba(.1, .1, .1, 1), rgba(.1, .1, .1, 0));
+}
+
+.textContainer{
+    position: relative;
+    margin-left: calc(568px * var(--case_k));
+    margin-top: calc(300px * var(--case_k));
+
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(3 * var(--case_k));
+    align-items: flex-end;
+}
+.title{
+    position: relative;
+    margin-top: calc(222px * var(--case_k));
+    margin-left: calc(37px * var(--case_k));
+
+    font-family: var(--font-codenext);
+    font-weight: bold;
+    font-size: calc(50px * var(--case_k));
+    line-height: 1;
+
+    color: white;
+}
+.subtitleContainer{
+    position: absolute;
+    top: calc(471px * var(--case_k));
+    left: calc(37px * var(--case_k));
+
+    display: flex;
+    flex-direction: column;
+    gap: calc(5px * var(--case_k));
+}
+.text{
+    font-family: var(--font-codenext);
+    font-weight: 300;
+    font-size: calc(9.5px * var(--case_k));
+    line-height: 1;
+
+    color: white;
+}
+
+.leftText,
+.rightText{
+    font-family: var(--font-codenext);
+    font-weight: 300;
+    font-size: calc(9.5px * var(--case_k));
+    line-height: 1;
+
+    color: white;
+}
+.leftText{
+    position: absolute;
+    top: calc(25px * var(--case_k));
+    left: calc(37px * var(--case_k));
+}
+.rightText{
+    position: absolute;
+    top: calc(25px * var(--case_k));
+    left: calc(324px * var(--case_k));
+}
+
+.centralTextContainer{
+    position: absolute;
+    top: calc(248px * var(--case_k));
+    left: calc(271px * var(--case_k));
+
+    display: flex;
+    flex-direction: row;
+
+    opacity: .6;
+}
+.centalTextOnest{
+    font-family: var(--font-onest);
+    font-weight: 300;
+    font-size: calc(17px * var(--case_k));
+    line-height: 1;
+
+    color: white;
+}
+.centalTextCodenext{
+    font-family: var(--font-codenext);
+    font-weight: 300;
+    font-size: calc(17px * var(--case_k));
+    line-height: 1;
+
+    color: white;
+}

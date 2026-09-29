@@ -1,0 +1,71 @@
+.main{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    --case_k: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    background-color: #000000;
+    z-index: 1;
+}
+.image{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: .6;
+}
+
+.title{
+    position: absolute;
+    left: calc(93px * var(--case_k));
+    top: calc(132px * var(--case_k));
+
+    font-family: var(--font-codenext);
+    font-weight: bold;
+    font-size: calc(90px * var(--case_k));
+    line-height: .78;
+
+    color: white;
+}
+.subtitle{
+    position: absolute;
+    left: calc(402px * var(--case_k));
+    top: calc(204px * var(--case_k));
+
+    font-family: var(--font-codenext);
+    font-weight: bold;
+    font-size: calc(27px * var(--case_k));
+    line-height: .78;
+    font-style: italic;
+
+    color: white;
+}
+.text{
+    position: absolute;
+    left: calc(99px * var(--case_k));
+    top: calc(284px * var(--case_k));
+
+    width: calc(454px * var(--case_k));;
+
+    font-family: var(--font-codenext);
+    font-weight: normal;
+    font-size: calc(16px * var(--case_k));
+    line-height: 1;
+
+    color: white;
+
+    opacity: .6;
+}
+
+.shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    opacity: .5;
+}
