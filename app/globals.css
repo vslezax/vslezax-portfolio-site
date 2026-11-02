@@ -26,6 +26,21 @@
   --font-sans: var(--font-codenext), sans-serif;
 }
 
+/*
+ * Скрывает вертикальный скроллбар, оставляя прокрутку рабочей.
+ * Класс навешивается на <html> только на главной странице (см. useHeroPreloader):
+ * так исчезает скачок ширины при блокировке/разблокировке прокрутки в hero,
+ * а на остальных страницах (/photo) скроллбар остаётся как обычно.
+ */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
